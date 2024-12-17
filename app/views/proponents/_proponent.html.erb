@@ -1,0 +1,73 @@
+<%= simple_form_for(@proponent) do |f| %>
+  <div class="form-inputs form-control form-control-lg" data-controller="inss">
+    <div class="row">
+      <div class="col-md-5">
+        <%= f.input :name, label: t('activerecord.attributes.proponents.name'), input_html: { disabled: true } %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :document, label: t('activerecord.attributes.proponents.document'), input_html: { disabled: true } %>
+      </div>
+      <div class="col-md-3">
+        <%= f.input :birth_date, 
+          label: t('activerecord.attributes.proponents.birth_date'), 
+          html5: true,
+          input_html: { class: "custom-date-field", disabled: true } %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :salary, 
+          label: t('activerecord.attributes.proponents.salary'), html5: true,
+          input_html: { data: { inss_target: "salary", action: "blur->inss#calculate" }, 
+            class: "form-control", disabled: true}
+        %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.input :inss_discount, 
+                    label: t('activerecord.attributes.proponents.inss_discount'), 
+                    input_html: { id: 'inss-calculated', 
+                                  class: 'form-control', 
+                                  data: { inss_target: 'inss' }, 
+                                  disabled: true } %>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="form-control form-control-lg my-2">
+    <h4>Endereços</h4>
+    <hr>
+    <div data-controller="nested-form" data-nested-form-wrapper-selector-value=".nested-form-wrapper">
+      <template data-nested-form-target="template">
+        <%= f.simple_fields_for :addresses, Address.new, child_index: 'NEW_RECORD' do |address_fields| %>
+          <%= render "address", f: address_fields %>
+        <% end %>
+      </template>
+
+      <%= f.simple_fields_for :addresses do |address_fields| %>
+        <%= render "address", f: address_fields %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-control form-control-lg my-2">
+    <h4>Contatos</h4>
+    <hr>
+    <div data-controller="nested-form" data-nested-form-wrapper-selector-value=".nested-form-wrapper">
+      <template data-nested-form-target="template">
+        <%= f.simple_fields_for :contacts, Contact.new, child_index: 'NEW_RECORD' do |contact_fields| %>
+          <%= render "contact", f: contact_fields %>
+        <% end %>
+      </template>
+
+      <%= f.simple_fields_for :contacts do |contact_fields| %>
+        <%= render "contact", f: contact_fields %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-inputs form-control form-control-sm custom-save-form-control">
+    <%= link_to 'Editar', edit_proponent_path(@proponent), class: "btn btn-warning btn-sm" %>
+  </div>
+<% end %>

@@ -1,0 +1,72 @@
+/* app/assets/stylesheets/devise.css */
+
+/* Estilos para a tela de login */
+body {
+    background-color: #f4f6f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .btn {
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .custom-remove-button {
+    margin-top: 36px !important;
+  }
+
+  .custom-save-form-control {
+    display: flex;
+    justify-content: center !important;
+  }    
+
+  .custom-save-button {
+    width: 150px;
+  }
+
+  .custom-date-field {
+    line-height: 2.0! important;
+  }
+  
+  h2 {
+    margin-top: 50px;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  

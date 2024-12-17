@@ -31,3 +31,11 @@
 
 en:
   hello: "Hello world"
+  kaminari:
+    first: "Primeira"
+    last: "Última"
+    previous: "Anterior"
+    next: "Próxima"
+    out_of: "de"
+    justify: "Exibindo %{first} - %{last} de %{total} resultados"
+    page_gap: "..."

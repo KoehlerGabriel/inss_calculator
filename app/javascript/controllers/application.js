@@ -1,9 +1,9 @@
-import { Application } from "@hotwired/stimulus"
+import Rails from "@rails/ujs";
+import { Application } from "@hotwired/stimulus";
 
-const application = Application.start()
+Rails.start();
+const application = Application.start();
+application.debug = false;
+window.Stimulus = application;
 
-// Configure Stimulus development experience
-application.debug = false
-window.Stimulus   = application
-
-export { application }
+export { application };

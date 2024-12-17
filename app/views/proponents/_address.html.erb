@@ -1,0 +1,22 @@
+<div class="row nested-form-wrapper" data-new-record="<%= f.object.new_record? %>">
+  <%= f.hidden_field :id %>
+  <div class="col">
+      <%= f.input :street, label: t('activerecord.attributes.address.street'), html5: true %>
+  </div>
+  <div class="col">
+      <%= f.input :number, label: t('activerecord.attributes.address.number'), html5: true %>
+  </div>
+  <div class="col">
+      <%= f.input :neighborhood, label: t('activerecord.attributes.address.neighborhood'), html5: true %>
+  </div>
+  <div class="col">
+      <%= f.input :city, label: t('activerecord.attributes.address.city'), html5: true %>
+  </div>
+  <div class="col">
+      <%= f.input :state, label: t('activerecord.attributes.address.state'), html5: true %>
+  </div>
+  <div class="col">
+      <%= f.input :zip_code, label: t('activerecord.attributes.address.zip_code'), html5: true %>
+  </div>
+</div>
+<hr>

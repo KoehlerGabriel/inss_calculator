@@ -1,0 +1,32 @@
+<div class="form-inputs form-control form-control-sm my-2">
+  <h1>Dashboard</h1>
+</div>
+
+<div class="salary-report">
+  <div class="form-inputs form-control form-control-sm my-2">
+
+    <h2>Lista de Proponentes por Faixa Salarial</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Faixa Salarial</th>
+          <th>Quantidade de Proponentes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @salary_ranges.each do |range, proponents| %>
+          <tr>
+            <td><%= range %></td>
+            <td><%= proponents.count %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="form-inputs form-control form-control-sm my-2">
+    <h2>Contagem de Proponentes por Faixa Salarial</h2>
+    <%= column_chart @chart_data %>
+  </div>
+</div>
+
